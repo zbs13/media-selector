@@ -1,6 +1,6 @@
 {
   "name": "media-selector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Media-selector is a simple library to import medias as the most secure way as possible.",
   "main": "index.js",
   "directories": {
