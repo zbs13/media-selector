@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" type="module" src="../script/index.js"></script>
+    <style>
+        .media-selector--upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin: auto;
+        }
+    
+        .media-selector--upload-btn-wrapper .media-selector--upload-btn {
+            max-width: 100%;
+            border: 2px dashed black;
+            color: black;
+            background-color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            height: 200px;
+            margin: 20px 10px;
+        }
+
+        .media-selector--upload-btn-wrapper .media-selector--upload-btn:hover{
+            border: 2px dashed grey;
+        }
+    
+        .media-selector--upload-btn-wrapper input[type=file] {
+            margin: 20px 10px;
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            height: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="media-selector--upload-btn-wrapper">
+        <button class="media-selector--upload-btn flex column align-center justify-center">
+            <label>Sélectionner un media</label>
+        </button>
+        <input type="file" id="1" class="media-selector--input-file" accept="*" />
+    </div>
+    <div class="media-selector--upload-btn-wrapper">
+        <button class="media-selector--upload-btn flex column align-center justify-center">
+            <label>Sélectionner un media</label>
+        </button>
+        <input type="file" id="2" class="media-selector--input-file" accept="*" />
+    </div>
+    <script>
+        new MediaSelector({
+            maxSize: 5,
+            formats: ["PNG", "JPEG"]
+        }, "a");
+    </script>
+</body>
+
+</html>
