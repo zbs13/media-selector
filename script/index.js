@@ -1,7 +1,7 @@
 /**
  * media-selector v.1.0.0
  * 
- * media-selector is a simple library to import medias with as the most secure way as possible.
+ * media-selector is a simple library to import medias as the most secure way as possible.
  * 
  * @author Lucas Estrade 
  * @github author => https://github.com/lucasestrade
