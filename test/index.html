@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <script type="text/javascript" type="module" src="../index.js"></script>
     <style>
         .media-selector--upload-btn-wrapper {
             position: relative;
@@ -54,11 +53,13 @@
         </button>
         <input type="file" id="2" class="media-selector--input-file" accept="*" />
     </div>
+    <script src="../dist/index.js"></script>
     <script>
-        new MediaSelector({
-            maxSize: 5,
-            formats: ["PNG", "JPEG"]
-        }, "a");
+        MediaSelector({
+            formats: ["PNG"]
+        }, function(){
+            console.log("aa");
+        });
     </script>
 </body>
 
