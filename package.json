@@ -1,6 +1,6 @@
 {
   "name": "media-selector",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Media-selector is a simple library to import medias as the most secure way as possible.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,10 +18,14 @@
   "keywords": [
     "media",
     "selectors",
-    "media-selectors"
+    "media-selectors",
+    "media-selector",
+    "image",
+    "video",
+    "file"
   ],
   "author": "Lucas Estrade",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/lucasestrade/media-selector/issues"
   },

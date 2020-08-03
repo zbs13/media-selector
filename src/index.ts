@@ -1,6 +1,6 @@
 import './index.css';
 /**
- * media-selector v.1.0.8
+ * media-selector v.1.0.9
  * 
  * media-selector is a simple library to import medias as the most secure way as possible.
  * 
@@ -282,12 +282,13 @@ function MediaSelector(options: Object, callback: Function): void {
                                 }
 
                                 if(mime !== "invalid"){
+                                    // valid
                                     if(formats !== undefined){
                                         if(!formats.map(v => v.toLowerCase()).includes(extension)){
                                             if(formatError !== undefined){
                                                 formatError();
-                                                return;
                                             }
+                                            return;
                                         }
                                     }
 
@@ -297,10 +298,11 @@ function MediaSelector(options: Object, callback: Function): void {
                                         extension: extension
                                     });
                                 }else{
+                                    // not valid
                                     if(formatError !== undefined){
                                         formatError();
-                                        return;
                                     }
+                                    return;
                                 }
                             }
                         };

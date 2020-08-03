@@ -1,6 +1,6 @@
 import './index.css';
 /**
- * media-selector v.1.0.8
+ * media-selector v.1.0.9
  *
  * media-selector is a simple library to import medias as the most secure way as possible.
  *
