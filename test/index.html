@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <script src="../dist/index.js"></script>
     <style>
         .media-selector--upload-btn-wrapper {
             position: relative;
@@ -9,7 +10,7 @@
             display: inline-block;
             margin: auto;
         }
-    
+
         .media-selector--upload-btn-wrapper .media-selector--upload-btn {
             max-width: 100%;
             border: 2px dashed black;
@@ -26,7 +27,7 @@
         .media-selector--upload-btn-wrapper .media-selector--upload-btn:hover{
             border: 2px dashed grey;
         }
-    
+
         .media-selector--upload-btn-wrapper input[type=file] {
             margin: 20px 10px;
             font-size: 100px;
@@ -53,12 +54,22 @@
         </button>
         <input type="file" id="2" class="media-selector--input-file" accept="*" />
     </div>
-    <script src="../dist/index.js"></script>
     <script>
         MediaSelector({
-            formats: ["PNG"]
-        }, function(){
-            console.log("aa");
+            formats: ["PNG", "JPG", "JPEG"],
+            minSize: 2,
+            maxSize: 20000000,
+            formatError: function(){
+                console.log("erreur format");
+            },
+            minSizeError: function(){
+                console.log("minSize erreur");
+            },
+            maxSizeError: function(){
+                console.log("maxSize erreur");
+            }
+        }, function(data){
+            console.log("tout est ok", data);
         });
     </script>
 </body>
