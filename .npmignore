@@ -2,3 +2,5 @@ node_modules
 test
 src/index.ts
 assets
+tsconfig.json
+webpack.config.js
