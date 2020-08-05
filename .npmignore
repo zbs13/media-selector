@@ -1,6 +1,5 @@
 node_modules
 test
-src/index.ts
-assets
+src
+assets/img
 tsconfig.json
-webpack.config.js

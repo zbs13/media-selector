@@ -91,7 +91,7 @@ const MediaSelector = require('media-selector');
 ```js
 MediaSelector({
     // authorized formats
-    formats: ["PNG", "JPG", "JPEG"],
+    formats: ["PNG", "JPEG"],
     // min size
     minSize: 2,
     // max size
@@ -159,7 +159,6 @@ MediaSelector({
 - GZ
 - ICO
 - JPEG
-- JPG
 - PNG
 - MSI
 - MP3

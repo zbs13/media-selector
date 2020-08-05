@@ -1,6 +1,6 @@
-import './index.css';
+import '../assets/css/index.css';
 /**
- * media-selector v.1.1.3
+ * media-selector v.1.1.11
  * 
  * media-selector is a simple library to import medias as the most secure way as possible.
  * 
@@ -34,7 +34,6 @@ function MediaSelector(options: Object, callback: Function): void {
             "GZ",
             "ICO",
             "JPEG",
-            "JPG",
             "PNG",
             "MSI",
             "MP3",
@@ -66,17 +65,12 @@ function MediaSelector(options: Object, callback: Function): void {
     }
 
     interface Options{
-        maxSize?: number|undefined
-        minSize?: number|undefined
+        maxSize?: number
+        minSize?: number
         formats?: string[]
-        formatError?: Function|undefined
-        minSizeError?: Function|undefined
-        maxSizeError?: Function|undefined
-    }
-
-    interface SizeStatus{
-        isSizeOk?: boolean
-        option?: string
+        formatError?: Function
+        minSizeError?: Function
+        maxSizeError?: Function
     }
 
     /**
@@ -84,7 +78,7 @@ function MediaSelector(options: Object, callback: Function): void {
      * @param {object} options 
      */
     function checkOptions(options: Object){
-        const { formats }: Options = options;
+        const { formats, maxSize, minSize, formatError, minSizeError, maxSizeError }: Options = options;
 
         try{
             if(formats !== undefined){
@@ -94,6 +88,31 @@ function MediaSelector(options: Object, callback: Function): void {
                     }
                 })
             }
+            if(maxSize !== undefined){
+                if(typeof maxSize !== "number"){
+                    error("maxSize must be of type Number");
+                }
+            }
+            if(minSize !== undefined){
+                if(typeof minSize !== "number"){
+                    error("minSize must be of type Number");
+                }
+            }
+            if(formatError !== undefined){
+                if(typeof formatError !== "function"){
+                    error("formatError must be of type Function");
+                }
+            }
+            if(minSizeError !== undefined){
+                if(typeof minSizeError !== "function"){
+                    error("minSizeError must be of type Function");
+                }
+            }
+            if(maxSizeError !== undefined){
+                if(typeof maxSizeError !== "function"){
+                    error("maxSizeError must be of type Function");
+                }
+            }       
         }
         catch(er){
             error(er);
@@ -116,24 +135,16 @@ function MediaSelector(options: Object, callback: Function): void {
              */
             if(file !== undefined){
                 const { maxSize, minSize, formats, formatError, minSizeError, maxSizeError }: Options = options;
-                let sizeStatus: Object = {
-                    isSizeOk: true
-                };
-                if(maxSize !== undefined){
-                    sizeStatus = {
-                        isSizeOk: file.size <= maxSize,
-                        option: "maxSize"
-                    }
+                var maxSizeOk: boolean = true;
+                var minSizeOK: boolean = true;
+                if (maxSize !== undefined) {
+                    maxSizeOk = file.size <= maxSize;
                 }
-                if(minSize !== undefined){
-                    sizeStatus = {
-                        isSizeOk: file.size >= minSize,
-                        option: "minSize"
-                    }
+                if (minSize !== undefined) {
+                    minSizeOK = file.size >= minSize;
                 }
-        
-                let { isSizeOk, option }: SizeStatus = sizeStatus;
-                if(isSizeOk){
+
+                if (maxSizeOk && minSizeOK) {
                     var base64: string|ArrayBuffer|null = null;
                     let blob: File = file;
                     let fileReaderForBase64: FileReader = new FileReader();
@@ -403,7 +414,8 @@ function MediaSelector(options: Object, callback: Function): void {
                                     callback({
                                         base64: base64,
                                         mime: mime,
-                                        extension: extension
+                                        extension: extension,
+                                        size: file !== undefined ? file.size : null
                                     });
                                 }else{
                                     // not valid
@@ -420,17 +432,15 @@ function MediaSelector(options: Object, callback: Function): void {
                     /**
                      * display right error depending the option
                      */
-                    switch(option){
-                        case "maxSize":
-                            if(maxSizeError !== undefined){
-                                maxSizeError();
-                            }
-                            break;
-                        case "minSize":
-                            if(minSizeError !== undefined){
-                                minSizeError();
-                            }
-                            break;
+                    if(!maxSizeOk){
+                        if (maxSizeError !== undefined) {
+                            maxSizeError();
+                        }
+                    }
+                    if(!minSizeOK){
+                        if (minSizeError !== undefined) {
+                            minSizeError();
+                        }
                     }
                 }
             }
