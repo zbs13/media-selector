@@ -138,9 +138,9 @@ MediaSelector({
 
 ```json
 {
-    base64 : ...,
-    mime : "image/png",
-    extension : "png"
+    "base64" : "base64/...",
+    "mime" : "image/png",
+    "extension" : "png"
 }
 ```
 
