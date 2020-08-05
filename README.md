@@ -1,5 +1,5 @@
 <p align="center" >
-    ![Media-selector logo](/assets/img/logo/media-selector-logo.png "Media-selector")
+    <img src="/assets/img/logo/media-selector-logo.png" alt="Media-selector"/>
 </p>
 
 <p align="center">
