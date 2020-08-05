@@ -3,5 +3,5 @@
 </p>
 
 <p align="center">
-    Import medias easily and as the most secure way as possible.
+    <b>Import medias easily and as the most secure way as possible.</b>
 </p>
