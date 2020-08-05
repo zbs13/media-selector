@@ -1,3 +1,3 @@
-# Media-selector
+![Media-selector logo](/assets/img/logo/media-selector-logo.png "Media-selector")
 
-Media-selector is a simple library to import medias as the most secure way as possible.
+Import medias easily and as the most secure way as possible.

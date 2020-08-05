@@ -43,14 +43,14 @@
 
 <body>
     <div class="media-selector--upload-btn-wrapper">
-        <button class="media-selector--upload-btn flex column align-center justify-center">
-            <label>Sélectionner un media</label>
+        <button class="media-selector--upload-btn">
+            <label>Select a file</label>
         </button>
         <input type="file" id="1" class="media-selector--input-file" accept="*" />
     </div>
     <div class="media-selector--upload-btn-wrapper">
-        <button class="media-selector--upload-btn flex column align-center justify-center">
-            <label>Sélectionner un media</label>
+        <button class="media-selector--upload-btn">
+            <label>Select a file</label>
         </button>
         <input type="file" id="2" class="media-selector--input-file" accept="*" />
     </div>
@@ -69,7 +69,7 @@
                 console.log("maxSize erreur");
             }
         }, function(data){
-            console.log("tout est ok", data);
+            console.log("all is ok", data);
         });
     </script>
 </body>
