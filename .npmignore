@@ -3,3 +3,4 @@ test
 src
 assets/img
 tsconfig.json
+.npmrc

@@ -6,6 +6,8 @@
     <b>Import medias easily and as the most secure way as possible.</b>
 </p>
 
+[![NPM version](http://img.shields.io/npm/v/npm-expansions.svg?style=flat-square)](https://www.npmjs.org/package/media-selector) [![NPM license](http://img.shields.io/npm/l/npm-expansions.svg?style=flat-square)](https://www.npmjs.org/package/media-selector)
+
 ## Description
 
 <p>
