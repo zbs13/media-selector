@@ -60,16 +60,16 @@
             minSize: 2,
             maxSize: 20000000,
             formatError: function(){
-                console.log("erreur format");
+                console.log("format error");
             },
             minSizeError: function(){
-                console.log("minSize erreur");
+                console.log("minSize error");
             },
             maxSizeError: function(){
-                console.log("maxSize erreur");
+                console.log("maxSize error");
             }
         }, function(data){
-            console.log("all is ok", data);
+            console.log("file uploaded", data);
         });
     </script>
 </body>
