@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 require("../assets/css/index.css");
 /**
- * media-selector v.1.1.11
+ * media-selector v.1.1.12
  *
  * media-selector is a simple library to import medias as the most secure way as possible.
  *
@@ -433,4 +433,3 @@ function MediaSelector(options, callback) {
     });
 }
 exports.default = MediaSelector;
-//# sourceMappingURL=index.js.map
